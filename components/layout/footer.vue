@@ -1,6 +1,6 @@
 <template>
   <div class="footer" flex="main:center cross:center">
-      <span>2018&copy;CETC</span>
+    <span>2018&copy;CETC</span>
   </div>
 </template>
 <style scoped>
