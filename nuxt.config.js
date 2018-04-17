@@ -34,6 +34,6 @@ module.exports = {
     }
   },
   plugins: ["~plugins/element", "~plugins/axios"],
-  css: ["element-ui/lib/theme-chalk/index.css"],
+  css: ["element-ui/lib/theme-chalk/index.css", "~assets/app.styl", "flex.css"],
   vendor: ["element-ui", "axios"]
 };
