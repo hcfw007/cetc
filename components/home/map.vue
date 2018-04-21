@@ -1,7 +1,8 @@
 <template>
-    <div style="position:relative;">
-        <img src="~/static/map-china.svg" style="width:100%" />
-        <div v-for="item in province" v-if="map[item.name]" v-bind:key="item.name" v-bind:style="
+  <div style="position:relative;">
+    <img src="~/static/map-china.svg" style="width:100%" />
+    <transition-group name="fade" tag="div">
+      <div v-for="item in province" v-if="map[item.name]&&dotShow" v-bind:key="item.name" v-bind:style="
                 `
                 position:absolute;
                 left:${map[item.name].left}%;
@@ -10,14 +11,16 @@
                 z-index:1
                 `
             ">
-            <el-tooltip placement="top">
-                <div slot="content">{{item.name}} {{item.value}}</div>
-                <div style="padding:10px;" @click="$emit('click', item.name)">
-                    <div class="dot" v-bind:style="`width:${logistic(item.value)}px;height:${logistic(item.value)}px`"></div>
-                </div>
-            </el-tooltip>
-        </div>
-        <div v-for="item in province" v-if="map[item.name]" v-bind:key="item.name" v-bind:style="
+        <el-tooltip placement="top">
+          <div slot="content">{{item.name}} {{item.value}}</div>
+          <div style="padding:10px;" @click="$emit('click', item.name)">
+            <div class="dot" v-bind:style="`width:${logistic(item.value)}px;height:${logistic(item.value)}px`"></div>
+          </div>
+        </el-tooltip>
+      </div>
+    </transition-group>
+    <transition-group name="fade" tag="div">
+      <div v-for="item in province" v-if="map[item.name]&&dotShow" v-bind:key="item.name" v-bind:style="
                 `
                 position:absolute;
                 left:${map[item.name].left}%;
@@ -26,11 +29,11 @@
                 z-index:0
                 `
             ">
-            <div class="pulse" v-bind:style="`width:${logistic(item.value)*3}px;height:${logistic(item.value)*3}px`"></div>
-            <div class="pulse1" v-bind:style="`width:${logistic(item.value)*3}px;height:${logistic(item.value)*3}px`"></div>
-        </div>
-
-    </div>
+        <div class="pulse" v-bind:style="`width:${logistic(item.value)*3}px;height:${logistic(item.value)*3}px`"></div>
+        <div class="pulse1" v-bind:style="`width:${logistic(item.value)*3}px;height:${logistic(item.value)*3}px`"></div>
+      </div>
+    </transition-group>
+  </div>
 </template>
 
 <style scoped>
@@ -131,6 +134,14 @@
   animation-iteration-count: infinite;
   box-shadow: 1px 1px 30px #fff; /* 阴影效果 */
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
 
 
@@ -139,6 +150,7 @@ export default {
   name: "china-map",
   data() {
     return {
+      dotShow: false,
       map: {
         新疆: {
           left: 25.0,
@@ -284,6 +296,9 @@ export default {
       return Math.floor(30 / (1 + Math.pow(Math.E, -((value - 3) * 0.15))));
     }
   },
-  props: ["province"]
+  props: ["province"],
+  mounted() {
+    this.dotShow = true;
+  }
 };
 </script>

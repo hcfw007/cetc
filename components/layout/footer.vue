@@ -1,10 +1,10 @@
 <template>
-  <div class="footer" flex="main:center cross:center">
+  <div class="my-footer" flex="main:center cross:center">
     <span>2018&copy;CETC</span>
   </div>
 </template>
 <style scoped>
-.footer {
+.my-footer {
   width: 100%;
   padding: 1em;
   color: #bcbcbc;

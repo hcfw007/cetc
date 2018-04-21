@@ -1,5 +1,5 @@
 import MyHeader from "./header";
-import IndexSide from "./index-side";
+import MsgSide from "./msg-side";
 import MyLogo from "./logo";
 import MyFooter from "./footer";
-export { MyHeader, IndexSide, MyLogo, MyFooter };
+export { MyHeader, MsgSide, MyLogo, MyFooter };
