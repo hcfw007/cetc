@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log('sign up');
       return false;
     }
   }
