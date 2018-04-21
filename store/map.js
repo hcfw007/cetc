@@ -5,20 +5,26 @@ export const state = () => ({
     北京: {
       talentList: [
         {
+          id: "1",
           avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
           name: "某人才",
+          description: "某人才的简介",
           field: "机器学习",
           lab: "北京某实验室1"
         },
         {
+          id: "2",
           avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
           name: "某人才",
+          description: "某人才的简介",
           field: "机器学习",
           lab: "北京某实验室2"
         },
         {
+          id: "3",
           avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
           name: "某人才",
+          description: "某人才的简介",
           field: "机器学习",
           lab: "北京某实验室3"
         }
@@ -27,8 +33,10 @@ export const state = () => ({
     湖南: {
       talentList: [
         {
+          id: "4",
           avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
           name: "某人才",
+          description: "某人才的简介",
           field: "机器学习",
           lab: "湖南某实验室"
         }
@@ -37,8 +45,10 @@ export const state = () => ({
     西藏: {
       talentList: [
         {
+          id: "5",
           avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
           name: "某人才",
+          description: "某人才的简介",
           field: "机器学习",
           lab: "西藏某实验室"
         }
