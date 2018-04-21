@@ -4,13 +4,8 @@
     <div flex="cross:center">
       <el-menu router :default-active="$route.path.split('/')[1]||'/'" active-text-color="#409EFF" class="menu" mode="horizontal">
         <el-menu-item class="item" index="/">&#12288;首页&#12288;</el-menu-item>
-<<<<<<< HEAD
-        <el-menu-item class="item" index="msg">热点推送</el-menu-item>
-        <el-menu-item class="item" index="policy">政策法规</el-menu-item>
-=======
         <el-menu-item class="item" index="/msg">新闻公告</el-menu-item>
         <el-menu-item class="item" index="/policy">政策法规</el-menu-item>
->>>>>>> 120193e96b9252335fb1a4f81ab876454970de68
       </el-menu>
       <div>
         <el-popover ref="popover" placement="bottom-end" width="300">
