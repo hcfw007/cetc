@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="6">
-      <news-side @select="select"></news-side>
+      <news-side></news-side>
     </el-col>
     <el-col :span="18">
       <div flex="dir:top" v-if="typedArticle">
@@ -29,27 +29,16 @@
 <script>
 import NewsSide from "~/components/news/side";
 export default {
-  data() {
-    return {
-      index: "科研进展"
-    };
+  asyncData({ params, store }) {
+    let type = params.type || "科研进展";
+    store.commit("news/classify", type);
+    return { index: type };
   },
   components: { NewsSide },
   computed: {
-    article() {
-      return this.$store.state.news.article;
-    },
     typedArticle() {
-      return this.article.filter(item => item.type === this.index);
+      return this.$store.state.news.typedArticle;
     }
-  },
-  methods: {
-    select(index) {
-      this.index = index;
-    }
-  },
-  mounted() {
-    console.log(this.$route.path.split("/")[1]);
   }
 };
 </script>

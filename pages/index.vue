@@ -1,13 +1,10 @@
 <template>
-  <el-row type="flex" justify="center">
-    <el-col :span="20" style="position:relative">
+  <el-row type="flex" justify="center" style="position:relative">
+    <el-col :span="20">
       <china-map @click="handleClick" v-bind:province="provinceData" class="my-map" />
-      <div class="filter2" flex>
-        <el-radio-group v-model="filter1">
-          <el-radio-button label="开放共享"></el-radio-button>
-          <el-radio-button label="合作关系"></el-radio-button>
-        </el-radio-group>
-        <el-tabs v-model="filter2" class="ml-3">
+      <div class="filter2" flex="dir:top">
+        <span style="color:#555;font-weight:500;font-size:1.2em">开放共享</span>
+        <el-tabs v-model="filter2">
           <el-tab-pane name="人才">
             <span slot="label">
               <i class="el-icon-date"></i> 人才
@@ -43,6 +40,7 @@
 }
 .filter2 {
   position: absolute;
+  left: 0;
   bottom: 0;
   /* transform: translateX(-50%); */
 }
