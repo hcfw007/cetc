@@ -34,6 +34,6 @@
 </style>
 <script>
 export default {
-  name: "msg-side"
+  name: "news-side"
 };
 </script>

@@ -56,12 +56,15 @@ export default {
   computed: {
     provinceData() {
       return this.$store.state.map.mapData;
+    },
+    popoverInfo() {
+      return this.$store.state.map.info;
     }
   },
   components: { ChinaMap, MySearch },
   methods: {
     handleClick(provinceName) {
-      console.log(provinceName);
+      console.log(this.popoverInfo[provinceName]);
     }
   },
   mounted() {

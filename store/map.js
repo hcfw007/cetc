@@ -1,51 +1,54 @@
 export const state = () => ({
   mapData: [],
   onSearch: false,
-  provinceList: [
-    {
-      name: "西藏",
-      value: 3
+  info: {
+    北京: {
+      talentList: [
+        {
+          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
+          name: "某人才",
+          field: "机器学习",
+          lab: "北京某实验室1"
+        },
+        {
+          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
+          name: "某人才",
+          field: "机器学习",
+          lab: "北京某实验室2"
+        },
+        {
+          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
+          name: "某人才",
+          field: "机器学习",
+          lab: "北京某实验室3"
+        }
+      ]
     },
-    {
-      name: "北京",
-      value: 100
+    湖南: {
+      talentList: [
+        {
+          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
+          name: "某人才",
+          field: "机器学习",
+          lab: "湖南某实验室"
+        }
+      ]
     },
-    {
-      name: "天津",
-      value: 100
-    },
-    {
-      name: "黑龙江",
-      value: 1
-    },
-    {
-      name: "广西",
-      value: 10
-    },
-    {
-      name: "台湾",
-      value: 20
-    },
-    {
-      name: "海南",
-      value: 15
-    },
-    {
-      name: "新疆",
-      value: 7
-    },
-    {
-      name: "内蒙古",
-      value: 10
-    },
-    {
-      name: "江西",
-      value: 12
-    },
-    {
-      name: "湖南",
-      value: 1
+    西藏: {
+      talentlist: [
+        {
+          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
+          name: "某人才",
+          field: "机器学习",
+          lab: "西藏某实验室"
+        }
+      ]
     }
+  },
+  provinceList: [
+    { name: "西藏", value: 1 },
+    { name: "北京", value: 2 },
+    { name: "湖南", value: 1 }
   ]
 });
 
