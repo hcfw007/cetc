@@ -26,6 +26,9 @@
         </el-tabs>
       </div>
     </el-col>
+    <el-dialog :visible.sync="dialogVisible">
+      <talent-list v-if="filter2 === '人才'" :list="talentList"></talent-list>
+    </el-dialog>
   </el-row>
 </template>
 
@@ -46,11 +49,14 @@
 <script>
 import ChinaMap from "~/components/home/map";
 import MySearch from "~/components/home/search";
+import TalentList from "~/components/home/talentList";
 export default {
   data() {
     return {
       filter1: "开放共享",
-      filter2: "人才"
+      filter2: "人才",
+      dialogVisible: false,
+      talentList: []
     };
   },
   computed: {
@@ -61,10 +67,11 @@ export default {
       return this.$store.state.map.info;
     }
   },
-  components: { ChinaMap, MySearch },
+  components: { ChinaMap, MySearch, TalentList },
   methods: {
     handleClick(provinceName) {
-      console.log(this.popoverInfo[provinceName]);
+      this.talentList = this.popoverInfo[provinceName].talentList;
+      this.dialogVisible = true;
     }
   },
   mounted() {

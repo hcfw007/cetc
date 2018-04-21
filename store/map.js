@@ -35,7 +35,7 @@ export const state = () => ({
       ]
     },
     西藏: {
-      talentlist: [
+      talentList: [
         {
           avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
           name: "某人才",
