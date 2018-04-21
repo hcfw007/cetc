@@ -31,19 +31,64 @@ export const state = () => ({
       ],
       machineList: [
         {
+          id: "1",
           name: "机器PK-1",
+          description: "设施简介",
           lab: "北京某实验室1"
         },
         {
+          id: "1",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+        {
+          id: "1",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+        {
+          id: "1",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+        {
+          id: "1",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+        {
+          id: "1",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+        {
+          id: "1",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+
+        {
+          id: "2",
           name: "机器PK-2",
+          description: "设施简介",
           lab: "北京某实验室1"
         },
         {
+          id: "3",
           name: "机器PK-3",
+          description: "设施简介",
           lab: "北京某实验室1"
         },
         {
+          id: "4",
           name: "机器PK-4",
+          description: "设施简介",
           lab: "北京某实验室1"
         }
       ]

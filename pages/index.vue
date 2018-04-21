@@ -51,7 +51,7 @@
 import ChinaMap from "~/components/home/map";
 import MySearch from "~/components/home/search";
 import TalentList from "~/components/home/talentList";
-import MachineList from "~/components/home/MachineList";
+import MachineList from "~/components/home/machineList";
 export default {
   data() {
     return {
