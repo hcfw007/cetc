@@ -29,6 +29,7 @@
     <el-dialog :visible.sync="dialogVisible">
       <talent-list v-if="filter2 === '人才'" :list="talentList"></talent-list>
       <machine-list v-if="filter2 === '设备'" :list="machineList"></machine-list>
+      <research-list v-if="filter2 === '科研'" :list="researchList"></research-list>
     </el-dialog>
   </el-row>
 </template>
@@ -52,6 +53,7 @@ import ChinaMap from "~/components/home/map";
 import MySearch from "~/components/home/search";
 import TalentList from "~/components/home/talentList";
 import MachineList from "~/components/home/MachineList";
+import researchList from "~/components/home/researchList";
 export default {
   data() {
     return {
@@ -69,11 +71,12 @@ export default {
       return this.$store.state.map.info;
     }
   },
-  components: { ChinaMap, MySearch, TalentList, MachineList },
+  components: { ChinaMap, MySearch, TalentList, MachineList, researchList },
   methods: {
     handleClick(provinceName) {
       this.talentList = this.popoverInfo[provinceName].talentList;
       this.machineList = this.popoverInfo[provinceName].machineList;
+      this.researchList = this.popoverInfo[provinceName].researchList;
       this.dialogVisible = true;
     }
   },
