@@ -7,7 +7,7 @@
         <el-menu-item class="item" index="news">新闻公告</el-menu-item>
         <el-menu-item class="item" index="policy">政策法规</el-menu-item>
       </el-menu>
-      <div>
+      <div style="margin-left:20px;">
         <el-popover ref="popover" placement="bottom-end" width="300">
           <my-search/>
         </el-popover>
