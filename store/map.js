@@ -22,6 +22,24 @@ export const state = () => ({
           field: "机器学习",
           lab: "北京某实验室3"
         }
+      ],
+      machineList: [
+        {
+          name: "机器PK-1",
+          lab: "北京某实验室1"
+        },
+        {
+          name: "机器PK-2",
+          lab: "北京某实验室1"
+        },
+        {
+          name: "机器PK-3",
+          lab: "北京某实验室1"
+        },
+        {
+          name: "机器PK-4",
+          lab: "北京某实验室1"
+        }
       ]
     },
     湖南: {
