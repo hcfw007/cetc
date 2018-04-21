@@ -12,7 +12,11 @@
           <my-search/>
         </el-popover>
         <el-button type="primary" plain icon="el-icon-search" circle v-popover:popover/>
-        <el-button type="primary" plain icon="el-icon-menu" circle/>
+        <el-button type="primary" plain icon="el-icon-menu" circle @click="userDialogVisible = true" />
+        <el-dialog :visible.sync="userDialogVisible" width="20em">
+          <user-dialog>
+          </user-dialog>
+        </el-dialog>
       </div>
     </div>
   </div>
@@ -28,8 +32,14 @@
 <script>
 import MyLogo from "./logo";
 import MySearch from "../home/search";
+import UserDialog from "~/components/user/userDialog";
 export default {
   name: "my-header",
-  components: { MyLogo, MySearch }
+  components: { MyLogo, MySearch, UserDialog },
+  data() {
+    return {
+      userDialogVisible: false
+    };
+  }
 };
 </script>
