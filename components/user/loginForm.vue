@@ -6,7 +6,10 @@
     <el-form-item>
       <el-input type="password" v-model="form.password" placeholder="密码"> </el-input>
     </el-form-item>
-    <el-button type="primary" @click="onSubmit">登陆</el-button>
+    <span style="color:#bcbcbc" class="mb-1">实验室管理员
+      <nuxt-link to="#">注册</nuxt-link>
+    </span>
+    <el-button type="primary" @click="onSubmit" style="width:100%">登陆</el-button>
   </el-form>
 </template>
 <style scoped>
@@ -23,9 +26,15 @@ export default {
       }
     };
   },
+  computed: {
+    isLogin() {
+      return this.$store.state.user.isLogin;
+    }
+  },
   methods: {
     onSubmit() {
-      return false;
+      this.$store.commit("user/login", this.form);
+      this.isLogin && this.$emit("login");
     }
   }
 };

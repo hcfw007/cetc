@@ -33,7 +33,7 @@ module.exports = {
       }
     }
   },
-  plugins: ["~plugins/element", "~plugins/axios"],
+  plugins: ["~plugins/element", "~plugins/axios", "~plugins/vue-cookie"],
   css: ["element-ui/lib/theme-chalk/index.css", "~assets/app.styl", "flex.css"],
-  vendor: ["element-ui", "axios"]
+  vendor: ["element-ui", "axios", "vue-cookie"]
 };

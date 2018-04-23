@@ -20,6 +20,7 @@
     "nuxt": "^1.4.0",
     "v-charts": "^1.16.8",
     "vue": "^2.5.16",
+    "vue-cookie": "^1.1.4",
     "vue-echarts": "^3.0.7"
   },
   "devDependencies": {

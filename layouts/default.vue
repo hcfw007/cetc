@@ -1,17 +1,16 @@
 <template>
-  <el-row type="flex" justify="center">
-    <el-col :xs="24" :sm="22" :md="20" :lg="18" :xl="16">
-      <el-container flex="dir:top" style="min-height:100vh">
-        <el-header style="margin-top:1em">
-          <my-header/>
-        </el-header>
-        <el-main flex-box="1" style="position:relative">
-          <nuxt/>
-        </el-main>
-        <my-footer/>
-      </el-container>
-    </el-col>
-  </el-row>
+  <el-container flex="dir:top main:justify" style="min-height:100vh;max-width:100vw;overflow-x:hidden">
+    <el-header style="background:#fff;">
+      <my-header/>
+    </el-header>
+    <el-main style="padding:0">
+      <nuxt/>
+    </el-main>
+    <el-footer>
+      <my-footer/>
+    </el-footer>
+  </el-container>
+
 </template>
 
 <style>
@@ -21,6 +20,18 @@ body {
   background-image: url("~/static/bg.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
+a {
+  text-decoration-line: none;
+}
+a:link {
+  color: #409eff;
+}
+a:visited {
+  color: #409eff;
+}
+a:hover {
+  color: #98cbff;
 }
 </style>
 <script>

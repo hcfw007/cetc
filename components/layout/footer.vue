@@ -5,7 +5,6 @@
 </template>
 <style scoped>
 .my-footer {
-  width: 100%;
   padding: 1em;
   color: #bcbcbc;
   font-weight: 500;

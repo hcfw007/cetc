@@ -1,9 +1,6 @@
 <template>
-  <div flex>
-    <img src="~/static/logo.svg" class="logo-img pa-2">
-    <div class="logo-text pa-2">
-      科技创新平台<br> 资源开放共享系统
-    </div>
+  <div class="logo">
+    <img src="~/static/logo.svg" class="logo-img"> 中国电科科技创新平台资源开放共享系统
   </div>
 </template>
 <script>
@@ -13,11 +10,13 @@ export default {
 </script>
 <style scoped>
 .logo-img {
-  height: 3em;
+  height: 1.4em;
+  vertical-align: middle;
 }
-.logo-text {
-  border-left: 1px solid #409eff;
-  color: #409eff;
+.logo {
+  color: #555;
   white-space: nowrap;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 </style>

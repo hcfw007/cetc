@@ -37,57 +37,14 @@ export const state = () => ({
           lab: "北京某实验室1"
         },
         {
-          id: "1",
-          name: "机器PK-1",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-        {
-          id: "1",
-          name: "机器PK-1",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-        {
-          id: "1",
-          name: "机器PK-1",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-        {
-          id: "1",
-          name: "机器PK-1",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-        {
-          id: "1",
-          name: "机器PK-1",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-        {
-          id: "1",
-          name: "机器PK-1",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-
-        {
           id: "2",
-          name: "机器PK-2",
+          name: "机器PK-1",
           description: "设施简介",
           lab: "北京某实验室1"
         },
         {
           id: "3",
-          name: "机器PK-3",
-          description: "设施简介",
-          lab: "北京某实验室1"
-        },
-        {
-          id: "4",
-          name: "机器PK-4",
+          name: "机器PK-1",
           description: "设施简介",
           lab: "北京某实验室1"
         }
@@ -110,7 +67,53 @@ export const state = () => ({
           name: "科研项目3",
           lab: "北京某实验室1",
           type: "物联网"
+        }
+      ]
+    },
+    湖南: {
+      talentList: [
+        {
+          id: "4",
+          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
+          name: "某人才",
+          description: "某人才的简介",
+          field: "机器学习",
+          lab: "湖南某实验室"
+        }
+      ],
+      machineList: [
+        {
+          id: "4",
+          name: "机器PK-3",
+          description: "设施简介",
+          lab: "湖南某实验室1"
         },
+        {
+          id: "5",
+          name: "机器PK-4",
+          description: "设施简介",
+          lab: "湖南某实验室1"
+        }
+      ]
+    },
+    台湾: {
+      machineList: [
+        {
+          id: "6",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        },
+        {
+          id: "7",
+          name: "机器PK-1",
+          description: "设施简介",
+          lab: "北京某实验室1"
+        }
+      ]
+    },
+    上海: {
+      researchList: [
         {
           id: 4,
           name: "科研项目4",
@@ -131,18 +134,6 @@ export const state = () => ({
         }
       ]
     },
-    湖南: {
-      talentList: [
-        {
-          id: "4",
-          avatar: "https://avatars0.githubusercontent.com/u/1282324?s=88&v=4",
-          name: "某人才",
-          description: "某人才的简介",
-          field: "机器学习",
-          lab: "湖南某实验室"
-        }
-      ]
-    },
     西藏: {
       talentList: [
         {
@@ -156,11 +147,19 @@ export const state = () => ({
       ]
     }
   },
-  provinceList: [
-    { name: "西藏", value: 1 },
-    { name: "北京", value: 2 },
-    { name: "湖南", value: 1 }
-  ]
+  provinceList: {
+    人才队伍: [
+      { name: "西藏", value: 1 },
+      { name: "北京", value: 50 },
+      { name: "湖南", value: 1 }
+    ],
+    设备设施: [
+      { name: "北京", value: 3 },
+      { name: "湖南", value: 2 },
+      { name: "台湾", value: 2 }
+    ],
+    科研成果: [{ name: "北京", value: 3 }, { name: "上海", value: 3 }]
+  }
 });
 
 export const mutations = {

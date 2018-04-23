@@ -1,34 +1,24 @@
 <template>
-  <el-row type="flex" justify="center" style="position:relative">
-    <el-col :span="20">
+  <div>
+    <div class="home-header">开放共享</div>
+    <div class="home-nav">
+      <el-menu mode="horizontal" default-active="人才队伍" text-color="#bcbcbc" background-color="#24292e" active-text-color="#fff" @select="val=>filter2=val">
+        <el-menu-item index="人才队伍">人才队伍</el-menu-item>
+        <el-menu-item index="科研任务">科研任务</el-menu-item>
+        <el-menu-item index="设备设施">设备设施</el-menu-item>
+        <el-menu-item index="科研成果">科研成果</el-menu-item>
+      </el-menu>
+    </div>
+    <my-container>
       <china-map @click="handleClick" v-bind:province="provinceData" class="my-map" />
-      <div class="filter2" flex="dir:top">
-        <span style="color:#555;font-weight:500;font-size:1.2em">开放共享</span>
-        <el-tabs v-model="filter2">
-          <el-tab-pane name="人才">
-            <span slot="label">
-              <i class="el-icon-date"></i> 人才
-            </span>
-          </el-tab-pane>
-          <el-tab-pane name="科研">
-            <span slot="label">
-              <i class="el-icon-date"></i> 科研
-            </span>
-          </el-tab-pane>
-          <el-tab-pane name="设备">
-            <span slot="label">
-              <i class="el-icon-date"></i> 设备
-            </span>
-          </el-tab-pane>
-        </el-tabs>
-      </div>
-    </el-col>
+    </my-container>
     <el-dialog :visible.sync="dialogVisible">
-      <talent-list v-if="filter2 === '人才'" :list="talentList"></talent-list>
-      <machine-list v-if="filter2 === '设备'" :list="machineList"></machine-list>
-      <research-list v-if="filter2 === '科研'" :list="researchList"></research-list>
+      <!-- 暂时性显示方案 -->
+      <talent-list v-if="filter2 === '人才队伍'" :list="talentList"></talent-list>
+      <machine-list v-if="filter2 === '设备设施'" :list="machineList"></machine-list>
+      <research-list v-if="filter2 === '科研成果'" :list="researchList"></research-list>
     </el-dialog>
-  </el-row>
+  </div>
 </template>
 
 
@@ -44,32 +34,50 @@
   bottom: 0;
   /* transform: translateX(-50%); */
 }
+.home-header {
+  background-color: #24292e;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.2em;
+  padding: 1em;
+  padding-bottom: 0;
+}
+.home-nav {
+  margin-bottom: 2em;
+}
 </style>
 
 <script>
 import ChinaMap from "~/components/home/map";
-import MySearch from "~/components/home/search";
 import TalentList from "~/components/home/talentList";
 import MachineList from "~/components/home/machineList";
 import researchList from "~/components/home/researchList";
+import { MyContainer } from "~/components/layout";
 export default {
   data() {
     return {
-      filter1: "开放共享",
-      filter2: "人才",
+      filter2: "人才队伍",
       dialogVisible: false,
-      talentList: []
+      talentList: [],
+      machineList: [],
+      researchList: []
     };
   },
   computed: {
     provinceData() {
-      return this.$store.state.map.mapData;
+      return this.$store.state.map.mapData[this.filter2];
     },
     popoverInfo() {
       return this.$store.state.map.info;
     }
   },
-  components: { ChinaMap, MySearch, TalentList, MachineList, researchList },
+  components: {
+    ChinaMap,
+    TalentList,
+    MachineList,
+    researchList,
+    MyContainer
+  },
   methods: {
     handleClick(provinceName) {
       this.talentList = this.popoverInfo[provinceName].talentList;

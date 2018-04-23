@@ -110,6 +110,7 @@
 .dot:hover {
   transform: translateY(-3px);
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 /* 产生动画（向外扩散变大）的圆圈 第一个圆 */
 .pulse {
