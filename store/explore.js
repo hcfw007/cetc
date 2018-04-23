@@ -60,7 +60,9 @@ export const state = () => ({
 
 export const mutations = {
   classify(state, type) {
-    if (state.type === type) {
+    if (type === undefined) {
+      state.typedArticle = state.article;
+    } else if (state.type === type) {
       return;
     } else {
       state.typedArticle = state.article.filter(item => item.type === type);

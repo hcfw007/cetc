@@ -2,7 +2,7 @@
   <div>
     <div class="home-header">发现</div>
     <div class="home-nav">
-      <el-menu mode="horizontal" text-color="#bcbcbc" background-color="#24292e" active-text-color="#fff" :default-active="'/explore/'+($route.params.type||'人才队伍')" router>
+      <el-menu mode="horizontal" text-color="#bcbcbc" background-color="#24292e" active-text-color="#fff" :default-active="'/explore/'+($route.params.type)" router>
         <el-menu-item index="/explore/人才队伍">
           <span slot="title">人才队伍</span>
         </el-menu-item>
