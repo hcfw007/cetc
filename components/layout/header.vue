@@ -7,6 +7,7 @@
       <el-menu router :default-active="$route.path.split('/')[1]||'/'" active-text-color="#409EFF" class="menu" mode="horizontal">
         <el-menu-item class="item" index="/">&#12288;首页&#12288;</el-menu-item>
         <el-menu-item class="item" index="news">新闻公告</el-menu-item>
+        <el-menu-item class="item" index="explore">发现</el-menu-item>
         <el-menu-item class="item" index="policy">政策法规</el-menu-item>
       </el-menu>
       <my-search></my-search>
