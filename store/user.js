@@ -19,6 +19,14 @@ export const mutations = {
   logout(state) {
     Vue.cookie.delete("accessToken");
     state.isLogin = false;
+  },
+  check(state) {
+    if (Vue.cookie.get("accessToken") === state.assessToken) {
+      state.isLogin = true;
+    } else {
+      Vue.cookie.delete("accessToken");
+      state.isLogin = false;
+    }
   }
 };
 
