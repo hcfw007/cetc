@@ -3,14 +3,18 @@
     <el-dialog title="用户登录" :visible.sync="dialogVisible" width="30em">
       <login-form @login="dialogVisible = false"></login-form>
     </el-dialog>
-    <el-button @click="dialogVisible = true" v-if="!isLogin">登录</el-button>
-    <el-popover v-else placement="bottom-end" width="100">
-      <ui class="pop-list">
-        <li>我的主页</li>
-        <li>修改密码</li>
-        <li>用户注销</li>
-      </ui>
-      <el-button slot="reference" type="text">{{lab.name}}</el-button>
+    <el-button @click="dialogVisible = true" v-if="!isLogin" class="login-btn">登录</el-button>
+    <el-popover v-else placement="bottom-end">
+      <div flex>
+        <div>
+          <h3>{{lab.name}}</h3>
+          <nuxt-link to="#">d\</nuxt-link>
+        </div>
+        <img class="pop-img" src="~/static/pop-avatar.svg" style="width:4em;height:4em">
+
+      </div>
+
+      <img slot="reference" src="~/static/pop-avatar.svg" class="pop-img" />
     </el-popover>
   </div>
 </template>
@@ -21,6 +25,22 @@
 }
 .pop-item {
   padding: 0;
+}
+.pop-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  padding: 2px;
+}
+.pop-img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.login-btn {
+  background-color: #07222a;
+  color: #fff;
 }
 </style>
 

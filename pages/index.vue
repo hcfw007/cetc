@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div class="home-header">开放共享</div>
-    <div class="home-nav">
-      <el-menu mode="horizontal" default-active="人才队伍" text-color="#bcbcbc" background-color="#24292e" active-text-color="#fff" @select="val=>filter2=val">
-        <el-menu-item index="人才队伍">人才队伍</el-menu-item>
-        <el-menu-item index="科研任务">科研任务</el-menu-item>
-        <el-menu-item index="设备设施">设备设施</el-menu-item>
-        <el-menu-item index="科研成果">科研成果</el-menu-item>
-      </el-menu>
-    </div>
-    <my-container>
-      <china-map @click="handleClick" v-bind:province="provinceData" class="my-map" />
+    <!-- <div class="home-header">开放共享</div> -->
+    <my-container flex="dir:top cross:center main:center" class="home-container">
+      <el-row type="flex">
+        <el-col :span="6">
+          <map-info></map-info>
+        </el-col>
+        <el-col :span="13">
+          <china-map @hover="handlehover" v-bind:province="provinceData" class="my-map" />
+        </el-col>
+        <el-col :span="5" style="align-self:flex-end">
+          <right-info></right-info>
+        </el-col>
+      </el-row>
     </my-container>
     <el-dialog :visible.sync="dialogVisible">
       <!-- 暂时性显示方案 -->
@@ -45,14 +47,18 @@
 .home-nav {
   margin-bottom: 2em;
 }
+.home-container {
+  flex-wrap: nowrap;
+  min-height: calc(100vh - 8em);
+}
 </style>
 
 <script>
 import ChinaMap from "~/components/home/map";
-import TalentList from "~/components/home/talentList";
-import MachineList from "~/components/home/machineList";
-import researchList from "~/components/home/researchList";
+import MapInfo from "~/components/home/map-info";
+import RightInfo from "~/components/home/right-info";
 import { MyContainer } from "~/components/layout";
+importy
 export default {
   data() {
     return {
@@ -65,7 +71,7 @@ export default {
   },
   computed: {
     provinceData() {
-      return this.$store.state.map.mapData[this.filter2];
+      return this.$store.state.map.mapData;
     },
     popoverInfo() {
       return this.$store.state.map.info;
@@ -73,10 +79,9 @@ export default {
   },
   components: {
     ChinaMap,
-    TalentList,
-    MachineList,
-    researchList,
-    MyContainer
+    MyContainer,
+    MapInfo,
+    RightInfo
   },
   methods: {
     handleClick(provinceName) {
@@ -85,9 +90,6 @@ export default {
       this.researchList = this.popoverInfo[provinceName].researchList;
       this.dialogVisible = true;
     }
-  },
-  mounted() {
-    this.$store.commit("map/init");
   }
 };
 </script>

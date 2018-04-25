@@ -1,6 +1,6 @@
 <template>
   <el-container flex="dir:top main:justify" style="min-height:100vh;max-width:100vw;overflow-x:hidden">
-    <el-header style="background:#fff;">
+    <el-header style="background:#07212A;">
       <my-header/>
     </el-header>
     <el-main style="padding:0">

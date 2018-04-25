@@ -11,12 +11,9 @@
                 z-index:1
                 `
             ">
-        <el-tooltip placement="top">
-          <div slot="content">{{item.name}} {{item.value}}</div>
-          <div style="padding:10px;" @click="$emit('click', item.name)">
-            <div class="dot" v-bind:style="`width:${logistic(item.value)}px;height:${logistic(item.value)}px`"></div>
-          </div>
-        </el-tooltip>
+        <div style="padding:10px;" @mouseover="$emit('hover', item.name)">
+          <div class="dot" v-bind:style="`width:${logistic(item.value)}px;height:${logistic(item.value)}px`"></div>
+        </div>
       </div>
     </transition-group>
     <transition-group name="fade" tag="div">
@@ -102,38 +99,37 @@
 }
 /* 保持大小不变的小圆圈 */
 .dot {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(208, 47, 21, 0.7);
   border-radius: 50%;
-  box-shadow: 1px 1px 30px #409eff; /* 阴影效果 */
+  box-shadow: 1px 1px 30px #d02f15; /* 阴影效果 */
   transition-duration: 0.5s;
 }
 .dot:hover {
   transform: translateY(-3px);
   transition-duration: 0.5s;
-  cursor: pointer;
 }
 /* 产生动画（向外扩散变大）的圆圈 第一个圆 */
 .pulse {
   position: absolute;
   left: 0;
   top: 0;
-  border: 1px solid #fff;
+  border: 1px solid #d02f15;
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
   animation: warn 2s ease-out;
   animation-iteration-count: infinite;
-  box-shadow: 1px 1px 30px #fff; /* 阴影效果 */
+  box-shadow: 1px 1px 30px #d02f15; /* 阴影效果 */
 }
 /* 产生动画（向外扩散变大）的圆圈 第二个圆 */
 .pulse1 {
-  border: 1px solid #fff;
+  border: 1px solid #d02f15;
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
   animation: warn1 2s ease-out;
   animation-iteration-count: infinite;
-  box-shadow: 1px 1px 30px #fff; /* 阴影效果 */
+  box-shadow: 1px 1px 30px #d02f15; /* 阴影效果 */
 }
 .fade-enter-active,
 .fade-leave-active {

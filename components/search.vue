@@ -14,9 +14,14 @@
     </el-popover>
   </div>
 </template>
-<style scoped>
+<style>
 .search {
   width: 15em;
+  background-color: #062129;
+}
+.search > .el-input__inner {
+  background-color: transparent;
+  color: #fff;
 }
 a:link {
   color: #555;

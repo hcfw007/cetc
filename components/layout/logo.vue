@@ -14,7 +14,7 @@ export default {
   vertical-align: middle;
 }
 .logo {
-  color: #555;
+  color: #fff;
   white-space: nowrap;
   font-size: 1.2em;
   font-weight: 600;
