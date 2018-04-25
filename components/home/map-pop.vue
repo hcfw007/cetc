@@ -3,18 +3,24 @@
     <slot slot="reference"></slot>
     <div v-if="tab === '实验室'">
       <div class="py-2" v-for="lab in labList[province]" :key="lab.id">
-        <nuxt-link to="#">{{lab.name}}</nuxt-link>
+        <nuxt-link to="#" class="title">{{lab.name}}</nuxt-link>
       </div>
     </div>
     <div v-else>
-      <div class="py-2" v-for="lab in info[province][tab]" :key="lab.id" flex="main:justify">
-        <nuxt-link to="#">{{lab.labName}}</nuxt-link>
+      <div class="py-2 pr-2" v-for="lab in info[province][tab]" :key="lab.id" flex="main:justify">
+        <nuxt-link to="#" class="title">{{lab.labName}}</nuxt-link>
         <span>{{lab.number}}</span>
       </div>
     </div>
   </el-popover>
 </template>
 <style scoped>
+.title {
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 a {
   text-decoration-line: none;
 }
