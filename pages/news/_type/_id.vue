@@ -1,19 +1,18 @@
 <template>
-    <div>
-        <news-header/>
-        <my-container>
-            <!-- ID存在显示详细内容 否则显示全部列表 -->
-            <news-list :list="typedArticle" v-if="!NewsID" />
-            <div v-else> {{NewsID}}</div>
-        </my-container>
-    </div>
+  <div>
+    <!-- <news-header/> -->
+    <my-container>
+      <!-- ID存在显示详细内容 否则显示全部列表 -->
+      <news-list :list="typedArticle" v-if="!NewsID" />
+      <div v-else> {{NewsID}}</div>
+    </my-container>
+  </div>
 </template>
 
 <style scoped>
 
 </style>
 <script>
-import NewsHeader from "~/components/news/header";
 import NewsList from "~/components/news/list";
 import { MyContainer } from "~/components/layout";
 export default {
@@ -23,7 +22,7 @@ export default {
     store.commit("news/classify", type);
     return { index: type, NewsID: params.id };
   },
-  components: { NewsHeader, NewsList, MyContainer },
+  components: { NewsList, MyContainer },
   computed: {
     typedArticle() {
       return this.$store.state.news.typedArticle;
