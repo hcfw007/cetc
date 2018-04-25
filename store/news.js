@@ -54,13 +54,17 @@ export const state = () => ({
       description: "北京某实验室研发出了北京某实验室研发出了..."
     }
   ],
-  typedArticle: []
+  typedArticle: [],
+  type: ""
 });
 
 export const mutations = {
-  classify(state, checkedType) {
-    state.typedArticle = state.article.filter(
-      item => checkedType.indexOf(item.type) > -1
-    );
+  classify(state, type) {
+    if (state.type === type) {
+      return;
+    } else {
+      state.typedArticle = state.article.filter(item => item.type === type);
+      state.type = type;
+    }
   }
 };
