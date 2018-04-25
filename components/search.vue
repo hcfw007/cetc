@@ -24,13 +24,13 @@
   color: #fff;
 }
 a:link {
-  color: #555;
+  color: #fff;
 }
 a:visited {
-  color: #555;
+  color: #fff;
 }
 a:hover {
-  opacity: 0.5;
+  color: #b8d9fa;
 }
 </style>
 <script>

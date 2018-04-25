@@ -2,7 +2,7 @@
   <div>
     <el-tabs activate-name="实验室" v-model="mapActive" type="border-card" @tab-click="tabClickHandler">
       <el-tab-pane v-for="(item,index) in tabList" :key="index" :label="item" :name="item" class="tab-item">
-        <el-popover class="pop" v-for="(each,index0) in mapData" :key="each.id" placement="right" width="200" trigger="hover">
+        <el-popover class="pop" v-for="(each,index0) in mapData" :key="each.id" placement="right" width="70" trigger="hover">
           <div class="pa-3 province-item" slot="reference" flex>
             <span>{{index0+1}}</span>
             <span class="mx-3">{{each.name}}</span>
@@ -11,12 +11,12 @@
           </div>
           <div v-if="item === '实验室'">
             <div class="py-2" v-for="lab in labList[each.name]" :key="lab.id">
-              <nuxt-link to="#">{{lab.name}}</nuxt-link>
+              <nuxt-link to="#" class="title">{{lab.name}}</nuxt-link>
             </div>
           </div>
           <div v-else>
-            <div class="py-2" v-for="lab in info[each.name][item]" :key="lab.id" flex="main:justify">
-              <nuxt-link to="#">{{lab.labName}}</nuxt-link>
+            <div class="py-2 pr-2" v-for="lab in info[each.name][item]" :key="lab.id" flex="main:justify">
+              <nuxt-link to="#" class="title">{{lab.labName}}</nuxt-link>
               <span>{{lab.number}}</span>
             </div>
           </div>
@@ -26,6 +26,12 @@
   </div>
 </template>
 <style scoped>
+.title {
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .dark-card {
   border-top: 0;
 }
@@ -52,7 +58,7 @@ a:hover {
 </style>
 <style>
 .el-popover {
-  background-color: rgba(6, 8, 19, 0.5);
+  background-color: rgba(6, 8, 19, 0.9);
   color: #fff;
 }
 .el-progress-bar__outer {

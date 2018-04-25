@@ -5,15 +5,17 @@
     </el-dialog>
     <el-button @click="dialogVisible = true" v-if="!isLogin" class="login-btn">登录</el-button>
     <el-popover v-else placement="bottom-end">
-      <div flex>
-        <div>
-          <h3>{{lab.name}}</h3>
-          <nuxt-link to="#">d\</nuxt-link>
+      <div flex="dir:top">
+        <div flex>
+          <div class="mr-3" flex="dir:top">
+            <h3>{{lab.name}}</h3>
+            <nuxt-link to="#">我的主页</nuxt-link>
+            <nuxt-link to="#">修改密码</nuxt-link>
+          </div>
+          <img class="pop-img" src="~/static/pop-avatar.svg" style="width:4em;height:4em">
         </div>
-        <img class="pop-img" src="~/static/pop-avatar.svg" style="width:4em;height:4em">
-
+        <el-button type="text" to="#" @click="$store.commit('user/logout')" style="width:4em;margin-left:auto">注销</el-button>
       </div>
-
       <img slot="reference" src="~/static/pop-avatar.svg" class="pop-img" />
     </el-popover>
   </div>
@@ -41,6 +43,15 @@
 .login-btn {
   background-color: #07222a;
   color: #fff;
+}
+a:link {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+a:hover {
+  color: #b8d9fa;
 }
 </style>
 
