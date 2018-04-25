@@ -41,24 +41,13 @@ export default {
   computed: {},
   data() {
     return {
-      checkedType: ["科研进展", "运行管理", "通知公告", "行业动态"]
+      checkboxType: ["科研进展", "运行管理", "通知公告", "行业动态"]
     };
   },
-  created() {
-    this.$store.commit("news/classify", [
-      "科研进展",
-      "运行管理",
-      "通知公告",
-      "行业动态"
-    ]);
-  },
   methods: {
-    handleChange(value) {
-      // console.log(this.value);
-      // console.log(this.checkedType);
-      this.$store.commit("news/classify", this.checkedType);
+    handleClick(value) {
+      
     }
   }
 };
 </script>
-
