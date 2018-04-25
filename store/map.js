@@ -1,6 +1,6 @@
 export const state = () => ({
   mapData: [],
-  onSearch: false,
+  tab: "",
   info: {
     北京: {
       人才: [
@@ -302,5 +302,6 @@ export const getters = {
 export const mutations = {
   onShow(state, type) {
     state.mapData = state.provinceList[type];
+    state.tab = type;
   }
 };

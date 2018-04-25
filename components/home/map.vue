@@ -11,8 +11,10 @@
                 z-index:1
                 `
             ">
-        <div style="padding:10px;" @mouseover="$emit('hover', item.name)">
-          <div class="dot" v-bind:style="`width:${logistic(item.value)}px;height:${logistic(item.value)}px`"></div>
+        <div style="padding:10px;">
+          <map-pop :province="item.name" tab="实验室">
+            <div class="dot" v-bind:style="`width:${logistic(item.value)}px;height:${logistic(item.value)}px`"></div>
+          </map-pop>
         </div>
       </div>
     </transition-group>
@@ -143,6 +145,7 @@
 
 
 <script>
+import mapPop from "~/components/home/map-pop.vue";
 export default {
   name: "china-map",
   data() {
@@ -296,6 +299,7 @@ export default {
   props: ["province"],
   mounted() {
     this.dotShow = true;
-  }
+  },
+  components: { mapPop }
 };
 </script>

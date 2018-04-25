@@ -4,9 +4,9 @@
             <div v-for="item in header" :key="item.index" class="dark-tab-item" :class="{'active':item.index === act}" @click="act = item.index">{{item.title}}</div>
         </div>
         <div class="dark-tab-body">
-            <div v-for="(item,index) in info[act]" :key="item.id" flex class="mb-3">
+            <div v-for="(item,index) in info[act]" :key="item.id" flex class="my-3">
                 <div class="line-index mr-1">{{index+1}}</div>
-                <span>{{item.title}} {{item.value}}</span>
+                <nuxt-link to="#">{{item.title}} {{item.value}}</nuxt-link>
                 <img style="width:1em;height:1em" src="~/static/up.svg" v-if="item.arrow === 'up'">
                 <img style="width:1em;height:1em" src="~/static/down.svg" v-else>
             </div>
@@ -14,6 +14,18 @@
     </div>
 </template>
 <style scoped>
+a {
+  text-decoration-line: none;
+}
+a:link {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+a:hover {
+  color: #8bc5ff;
+}
 .tab-item {
   max-height: 55vh;
   overflow: scroll;

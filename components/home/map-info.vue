@@ -1,29 +1,29 @@
 <template>
-    <div>
-        <el-tabs activate-name="实验室" v-model="mapActive" type="border-card" @tab-click="tabClickHandler">
-            <el-tab-pane v-for="(item,index) in tabList" :key="index" :label="item" :name="item" class="tab-item">
-                <el-popover class="pop" v-for="(each,index0) in mapData" :key="each.id" placement="right" width="200" trigger="hover">
-                    <div class="pa-3 province-item" slot="reference" flex>
-                        <span>{{index0+1}}</span>
-                        <span class="mx-3">{{each.name}}</span>
-                        <el-progress :percentage="getPersent(each.value)" color="#D02F15" status="exception" class="progress" flex-box="1"></el-progress>
-                        <span>{{each.value}}</span>
-                    </div>
-                    <div v-if="item === '实验室'">
-                        <div class="py-2" v-for="lab in labList[each.name]" :key="lab.id">
-                            <nuxt-link to="#">{{lab.name}}</nuxt-link>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <div class="py-2" v-for="lab in info[each.name][item]" :key="lab.id" flex="main:justify">
-                            <nuxt-link to="#">{{lab.labName}}</nuxt-link>
-                            <span>{{lab.number}}</span>
-                        </div>
-                    </div>
-                </el-popover>
-            </el-tab-pane>
-        </el-tabs>
-    </div>
+  <div>
+    <el-tabs activate-name="实验室" v-model="mapActive" type="border-card" @tab-click="tabClickHandler">
+      <el-tab-pane v-for="(item,index) in tabList" :key="index" :label="item" :name="item" class="tab-item">
+        <el-popover class="pop" v-for="(each,index0) in mapData" :key="each.id" placement="right" width="200" trigger="hover">
+          <div class="pa-3 province-item" slot="reference" flex>
+            <span>{{index0+1}}</span>
+            <span class="mx-3">{{each.name}}</span>
+            <el-progress :percentage="getPersent(each.value)" color="#D02F15" status="exception" class="progress" flex-box="1"></el-progress>
+            <span>{{each.value}}</span>
+          </div>
+          <div v-if="item === '实验室'">
+            <div class="py-2" v-for="lab in labList[each.name]" :key="lab.id">
+              <nuxt-link to="#">{{lab.name}}</nuxt-link>
+            </div>
+          </div>
+          <div v-else>
+            <div class="py-2" v-for="lab in info[each.name][item]" :key="lab.id" flex="main:justify">
+              <nuxt-link to="#">{{lab.labName}}</nuxt-link>
+              <span>{{lab.number}}</span>
+            </div>
+          </div>
+        </el-popover>
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 <style scoped>
 .dark-card {
