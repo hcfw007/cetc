@@ -1,6 +1,6 @@
 <template>
-  <div class="explore-container" flex="dir:top">
-    <explore-checkbox flex="dir:top"></explore-checkbox>
+  <div class="explore-container">
+    <explore-checkbox></explore-checkbox>
     <el-card v-for="item in list" :key="item.id" class="mb-3">
       <div flex="dir:top">
         <span style="color:#bcbcbc"> 内容来自：{{item.author}}</span>

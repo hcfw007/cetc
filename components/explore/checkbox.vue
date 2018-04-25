@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="checkbox-container">
     <el-checkbox-group v-model="checkedType" @change="handleChange">
       <el-checkbox-button v-bind:label="'人才队伍'">
         人才队伍
@@ -14,6 +14,13 @@
   </div>
 </template>
 <style scoped>
+.checkbox-container{
+  padding-bottom: 1em;
+}
+el-checkbox-group {
+  display: block;
+  float: right;
+}
 .home-header {
   background-color: #24292e;
   color: #fff;
