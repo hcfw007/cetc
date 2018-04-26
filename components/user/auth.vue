@@ -11,6 +11,8 @@
             <h3>{{lab.name}}</h3>
             <nuxt-link to="#">我的主页</nuxt-link>
             <nuxt-link to="#">修改密码</nuxt-link>
+            <nuxt-link to="/viewInfo">信息查看</nuxt-link>
+            <nuxt-link to="/registerInfo">信息采集</nuxt-link>
           </div>
           <img class="pop-img" src="~/static/pop-avatar.svg" style="width:4em;height:4em">
         </div>
