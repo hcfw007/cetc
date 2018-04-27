@@ -37,7 +37,7 @@
 }
 .tab-item {
   max-height: 55vh;
-  overflow: scroll;
+  overflow: auto;
 }
 .province-item:hover {
   background-color: #0d485f;

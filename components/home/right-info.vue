@@ -35,7 +35,7 @@ a:hover {
 }
 .tab-item {
   max-height: 55vh;
-  overflow: scroll;
+  overflow: auto;
 }
 .dark-tab-item {
   font-size: 1em;
@@ -66,7 +66,7 @@ a:hover {
   width: 2em;
 }
 .dark-tab-body {
-  overflow: scroll;
+  overflow: auto;
   padding: 1em;
   text-overflow: ellipsis;
   overflow-x: hidden;
